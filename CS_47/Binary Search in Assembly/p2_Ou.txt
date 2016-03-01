@@ -1,0 +1,58 @@
+Steven Ou
+CS 47 
+7/9/2014
+Project 2
+ID: 001876135
+
+sorter: Takes an array list, the length of the list, and the request for ascending or
+descending sort than sorts the array list according to the request. 
+
+sorter implementation: I used the selection sort algorithm to solve this sorting problem. 
+		I used an inner loop to compare the initial value with the rest of the
+		values in the array to determine if a swap is necessary according to
+		the request for ascending or descending. I used the outter loop to loop
+		through the initial position value of the array and stops after it finish
+		comparing the second to the last element.
+
+
+C:\Users\Steven\Documents\Visual Studio 2013\Projects\CS47 Projects\p2\p2>p2 .\p
+2.data1 1
+
+10 -20 5 12 30 -5 -22 55 52 0
+
+Number of integer = 10
+Ascend_or_Descend = 1
+
+-22 -20 -5 0 5 10 12 30 52 55
+
+C:\Users\Steven\Documents\Visual Studio 2013\Projects\CS47 Projects\p2\p2>p2 .\p
+2.data2 1
+
+48 -24 48 -24 10 100 -10 60 -256 10 -10 4096 -1024 60 10 -10
+
+Number of integer = 16
+Ascend_or_Descend = 1
+
+-1024 -256 -24 -24 -10 -10 -10 10 10 10 48 48 60 60 100 4096
+
+C:\Users\Steven\Documents\Visual Studio 2013\Projects\CS47 Projects\p2\p2>p2 .\p
+2.data1 2
+
+10 -20 5 12 30 -5 -22 55 52 0
+
+Number of integer = 10
+Ascend_or_Descend = 2
+
+55 52 30 12 10 5 0 -5 -20 -22
+
+C:\Users\Steven\Documents\Visual Studio 2013\Projects\CS47 Projects\p2\p2>p2 .\p
+2.data2 2
+
+48 -24 48 -24 10 100 -10 60 -256 10 -10 4096 -1024 60 10 -10
+
+Number of integer = 16
+Ascend_or_Descend = 2
+
+4096 100 60 60 48 48 10 10 10 -10 -10 -10 -24 -24 -256 -1024
+
+C:\Users\Steven\Documents\Visual Studio 2013\Projects\CS47 Projects\p2\p2>

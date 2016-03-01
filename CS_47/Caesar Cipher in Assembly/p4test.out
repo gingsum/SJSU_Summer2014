@@ -1,0 +1,191 @@
+
+C:\sjsu\47\m14\p4>rem -- Ensure vcvars32.bat is executed before you use the CL command 
+
+C:\sjsu\47\m14\p4>rem -- Make sure you include stdafx.h if your p3.cpp contains "#include "stdafx.h" 
+
+C:\sjsu\47\m14\p4>rem -- To compile use "cl p4.cpp" or "cl p4.cpp /clr" 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>copy key1.h key.h 
+        1 file(s) copied.
+
+C:\sjsu\47\m14\p4>cl /LD encrypt.cpp 
+encrypt.cpp
+Microsoft (R) Incremental Linker Version 10.00.40219.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:encrypt.dll 
+/dll 
+/implib:encrypt.lib 
+encrypt.obj 
+   Creating library encrypt.lib and object encrypt.exp
+
+C:\sjsu\47\m14\p4>cl p4.cpp encrypt.lib 
+p4.cpp
+Microsoft (R) Incremental Linker Version 10.00.40219.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:p4.exe 
+p4.obj 
+encrypt.lib 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- To test, try different values and combinations 
+
+C:\sjsu\47\m14\p4>rem -- test1 
+
+C:\sjsu\47\m14\p4>rem key1.h values #1 direction = 0; shiftcount = 2; invertcase = 1; 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- Simple string 
+
+C:\sjsu\47\m14\p4>p4 "Hello World" 0 
+Source string = Hello World
+Target string = jGNNQ yQTNF
+Number of characters converted = 10
+
+C:\sjsu\47\m14\p4>p4 "jGNNQ yQTHF" 1 
+Source string = jGNNQ yQTHF
+Target string = Hello Worfd
+Number of characters converted = 10
+
+C:\sjsu\47\m14\p4>rem -- Boundary testing 
+
+C:\sjsu\47\m14\p4>p4 "Abc XYz" 0 
+Source string = Abc XYz
+Target string = cDE zaB
+Number of characters converted = 6
+
+C:\sjsu\47\m14\p4>p4 "cDE zaB" 1 
+Source string = cDE zaB
+Target string = Abc XYz
+Number of characters converted = 6
+
+C:\sjsu\47\m14\p4>rem -- Mix alpha and numeric 
+
+C:\sjsu\47\m14\p4>p4 "CS47 Section 3" 0 
+Source string = CS47 Section 3
+Target string = eu47 uGEVKQP 3
+Number of characters converted = 9
+
+C:\sjsu\47\m14\p4>p4 "eu 157c 2 kpv fcvc du ocp uau 3 1730 1845 vt oj 422 dWVV" 1 
+Source string = eu 157c 2 kpv fcvc du ocp uau 3 1730 1845 vt oj 422 dWVV
+Target string = CS 157A 2 INT DATA BS MAN SYS 3 1730 1845 TR MH 422 Butt
+Number of characters converted = 26
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- End of test1 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- Rebuild DLL only for different encryption properties 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>copy key2.h key.h 
+        1 file(s) copied.
+
+C:\sjsu\47\m14\p4>cl /LD encrypt.cpp 
+encrypt.cpp
+Microsoft (R) Incremental Linker Version 10.00.40219.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:encrypt.dll 
+/dll 
+/implib:encrypt.lib 
+encrypt.obj 
+   Creating library encrypt.lib and object encrypt.exp
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem test2 
+
+C:\sjsu\47\m14\p4>rem key2.h values #1 direction = 1; shiftcount = 5; invertcase = 0; 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- Simple string 
+
+C:\sjsu\47\m14\p4>p4 "Hello World" 0 
+Source string = Hello World
+Target string = Czggj Rjmgy
+Number of characters converted = 10
+
+C:\sjsu\47\m14\p4>p4 "Czggj Rjmgy" 1 
+Source string = Czggj Rjmgy
+Target string = Hello World
+Number of characters converted = 10
+
+C:\sjsu\47\m14\p4>rem -- Boundary testing 
+
+C:\sjsu\47\m14\p4>p4 "Abc XYz" 0 
+Source string = Abc XYz
+Target string = Vwx STu
+Number of characters converted = 6
+
+C:\sjsu\47\m14\p4>p4 "Vwx STu" 1 
+Source string = Vwx STu
+Target string = Abc XYz
+Number of characters converted = 6
+
+C:\sjsu\47\m14\p4>rem -- Mix alpha and numeric 
+
+C:\sjsu\47\m14\p4>p4 "XN47 dn 1 ja ocz wzno xgvnn D zqzm ojjf" 1 
+Source string = XN47 dn 1 ja ocz wzno xgvnn D zqzm ojjf
+Target string = CS47 is 1 of the best class I ever took
+Number of characters converted = 27
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- End of test2 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- Rebuild DLL only for different encryption properties 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>copy key3.h key.h 
+        1 file(s) copied.
+
+C:\sjsu\47\m14\p4>cl /LD encrypt.cpp 
+encrypt.cpp
+Microsoft (R) Incremental Linker Version 10.00.40219.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:encrypt.dll 
+/dll 
+/implib:encrypt.lib 
+encrypt.obj 
+   Creating library encrypt.lib and object encrypt.exp
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem test3 
+
+C:\sjsu\47\m14\p4>rem key3.h values #1 direction = 0; shiftcount 29; invertcase = 1; 
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>p4 "Abc XYz" 0 
+Source string = Abc XYz
+Target string = dEF abC
+Number of characters converted = 6
+
+C:\sjsu\47\m14\p4>p4 "dEF abC" 1 
+Source string = dEF abC
+Target string = Abc XYz
+Number of characters converted = 6
+
+C:\sjsu\47\m14\p4>p4 "wKLV FODVV UHDOOB @#$&!" 1 
+Source string = wKLV FODVV UHDOOB @#$&!
+Target string = This class really @#$&!
+Number of characters converted = 15
+
+C:\sjsu\47\m14\p4>rem
+
+C:\sjsu\47\m14\p4>rem -- End of test3 
